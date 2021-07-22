@@ -322,6 +322,7 @@
     |--- Makefile
     |--- README.md
     +--- src/
+        |--- benchmarksGen.py
         |--- closuresGen.cpp
         |--- closuresGenV2.cpp
         |--- glucose/...
@@ -345,6 +346,8 @@
 
     \item \verb|L_informe/| contiene los archivos de \LaTeX \hspace{0.075cm} 
     necesarios para generar este informe.
+
+    \item \verb|benchmarksGen.py| es el generador de casos de prueba.
 
     \item \verb|closuresGen.cpp| y \verb|closuresGenV2.cpp| son el c\'odigo 
     fuente para el generador de archivos \verb|.cnf| usando la formulaci\'on 
@@ -402,12 +405,67 @@
       benchmarks/benchmark_e=4.ics
   \end{verbatim}
 
+  \subsection{Generador de Casos de Prueba}
+    Para generar casos de prueba de forma autom\'atica puede ejecutar el script 
+    \verb|benchmarksGen.py| siguiendo la sintaxis:
 
-\section{Resultados}
-  V1:\\
-  \verb|[0.014, 0.019, 0.055, 0.61, 0.351, 5.21, 25.64, 7.89, 1613.70]|\\
+    \begin{center}
+      \verb|python benchmarksGen.py TEAMS DAYS DAILY_MATCHES|
+    \end{center}
 
-  V2:\\
-  \verb|[0.013, 0.011, 0.061, 0.128, 0.301, 40.15, 60.69, 1.43, ]|\\
+    Esto crear\'a un archivo JSON siguiendo la sintaxis de los torneos dado en el 
+    README tal que el nombre del torneo es \textit{POMAC}, la fecha de inicio es 
+    \textit{1999-11-28}, la fecha final es igual a la inicial mas \verb|DAYS| d\'ias,
+    la hora inicial es a las \textit{00:00:00}, la hora final es igual a la inciial 
+    m\'as 2 veces \verb|DAILY_MATCHES| horas y los equipos ser\'an desde \textit{T0}
+    hasta \textit{TN} donde \textit{N} es igual a \verb|TEAMS|. El nombre del archivo 
+    ser\'a \verb|benchmark_E<TEAMS>H<DAILY_MATCHES>F<DAYS>.json|. Por ejemplo si se 
+    ejecuta:
+
+    \begin{center}
+      \verb|python benchmarksGen.py 15 55 7|
+    \end{center}
+
+    Se obtendr\'a el archivo \verb|benchmark_E15H7F55.json|
+
+
+\section{Resultados y Conlusiones}
+  Los casos de prueba se definen por el n\'umero de equipos que participar\'an, 
+  el n\'umero de d\'ias que durar\'a el torneo y el n\'umero m\'aximo de partidos
+  diarios. Decidimos probar tanto la formulaci\'on V1 como V2 y comparar sus 
+  desempe\~nos. En caso de que alguno de estos dos no haya terminado un caso de 
+  prueba, se coloca una nota explicando la raz\'on por la que se cancel\'o su 
+  ejecuci\'on. En la \textit{Figura 1} se encuentra el resumen de ejecuci\'on de 
+  cada caso de prueba.\\ 
+
+  No se podr\'ia decir a partir de los casos de pruebas cual versi\'on de la 
+  formulaci\'on es mejor, ya que no hay una que tenga un mejor rendimiento de 
+  forma constante. Sin embargo, se puede notar que si la holgura (diferencia entre 
+  el n\'umero de d\'ias por el n\'umero de enfrentamientos diarios menos el n\'umero 
+  de partidos necesarios, es decir, $E * (E-1)$) es muy ajustada, V1 tiende a tener 
+  un mejor rendimiento, mientras que al aumentar la holgura, V2 mejora 
+  considerablemente, llegando a tardar pocos segundos para casos de prueba grande.
+  Tambi\'en podemos notar que a partir de cierto tama\~no en los casos de prueba,
+  V1 se vuelve inviable debido al uso de memoria. Esto se debe a la cantidad de 
+  casos de prueba que genera. Por ejemplo, para $(19, 90, 9)$, V1 genera alrededor
+  de 23 millones de clausuras, mientras que V2 s\'olo genera 565 mil. Suponiendo que 
+  cada clausura ocupe 64 bytes (por poner un n\'umero), entonces las 23M de 
+  clausuras ocupar\'ian m\'as de 1GB de memoria. Para el caso $(20, 110, 10)$ ni
+  siquiera vale la pena hacer el c\'alculo. Sin embargo, V2 puede llegar a ser muy ineficiente cuando la holgura es muy 
+  ajustada, como se nota en los casos de prueba donde no termina. \\
+
+  Se puede concluir que si el caso de prueba es lo suficientemente peque\~no
+  (menos de 19 equipos) y la holgura es poca, entonces se debe usar V1, en caso 
+  contrario V2. \\
+
+
+\begin{figure*}[t!]
+  \centering
+  \includegraphics[scale=2.5]{resultados.png}\\
+  \small{\textit{Figura 1. Resultados de los casos de prueba aplicados a ambas 
+  versiones de la Formulaci\'on.}}\\
+\end{figure*}
+
+
 
 \end{document}

@@ -99,6 +99,7 @@ for f in range(F):
         if e_v != e_l:
           varTuples.append((e_l, e_v, f, h))
 
+current_date = str(start_date)
 def getEvent(var: int):
   """
     Obtenemos un evento dada una variable de SAT.
@@ -111,11 +112,15 @@ def getEvent(var: int):
   begin_time = str(start_timedate + timedelta(hours=2*h))[-8:]
   end_time = str(start_timedate + timedelta(hours=2*h + 2))[-8:]
 
-  #print(f'{team_local} - {team_visitor}  /  {date} :: {begin_time}')
+  global current_date
+  if current_date != date: 
+    print('')
+    current_date = date
+  print(f'{team_local} - {team_visitor}  /  {date} :: {begin_time}')
 
   # Creamos el evento
   event = Event()
-  event.name = f'LOCAL: \'{team_local}\' - VISITOR: \'{team_visitor}\'.'
+  event.name = f'{tournament}: \'{team_local}\' - \'{team_visitor}\'.'
   event.begin = (date + 'T' + begin_time + 'Z')
   event.end = (date + 'T' + end_time + 'Z')
   event.created = datetime.now()

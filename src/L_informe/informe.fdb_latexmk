@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1626533898 "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.tex" "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.pdf" "informe" 1626533902
+["pdflatex"] 1626973973 "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.tex" "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.pdf" "informe" 1626973974
   "/etc/texmf/web2c/texmf.cnf" 1613085870 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.aux" 1626533901 1773 4cad499390692896fced186757d10ff8 ""
-  "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.tex" 1626533889 17334 c5f04ffd81352a5280f9d52f417268a6 ""
+  "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.aux" 1626973974 1922 a9a61449d837ed1ec0bbd6540d333a0b ""
+  "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.tex" 1626973971 20466 966489b2d404c5600bb478f5f8b85e85 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/bookman/pbkd7t.tfm" 1480098688 1828 e7f8907b15e46b672fb146aef572259e ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/bookman/pbkd8r.tfm" 1480098688 2652 fbb260af94169655e2163df863ca2995 ""
@@ -77,13 +77,14 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1551493644 34566 ab5be96bde1a5acfd4f881dbe566b5fb ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1613085917 125883 5a8e8cee8831b673b8567a1d9242290b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1613085923 795362 3d42f79942c732a88883bcee66f31b35 ""
-  "informe.aux" 1626533901 1773 4cad499390692896fced186757d10ff8 ""
-  "informe.out" 1626533901 555 e148a5713f51a13183a053c97b98db11 ""
-  "informe.tex" 1626533889 17334 c5f04ffd81352a5280f9d52f417268a6 ""
+  "informe.aux" 1626973974 1922 a9a61449d837ed1ec0bbd6540d333a0b ""
+  "informe.out" 1626973974 647 a53c5752eee246b68828aebad8cbd160 ""
+  "informe.tex" 1626973971 20466 966489b2d404c5600bb478f5f8b85e85 ""
+  "resultados.png" 1626971897 50050 01f73a39a48d35d808db787f5cf851aa ""
   (generated)
+  "informe.pdf"
+  "informe.aux"
+  "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.pdf"
   "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.log"
   "informe.out"
-  "informe.pdf"
   "informe.log"
-  "/home/amin/Desktop/Inteligencia/proyecto-3-ci5437/src/L_informe/informe.pdf"
-  "informe.aux"
